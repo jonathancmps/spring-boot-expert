@@ -1,11 +1,24 @@
-package io.github.jonathancmps.vendas.domain;
+package io.github.jonathancmps.vendas.domain.entity;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 
 import java.math.BigDecimal;
-
+@Entity
+@Table(name = "produto")
 public class Produto {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Integer id;
+
+    @Column(name = "descricao")
     private String descricao;
+
+    @Column(name = "preco_unitario")
     private BigDecimal preco;
 
     public Integer getId() {
